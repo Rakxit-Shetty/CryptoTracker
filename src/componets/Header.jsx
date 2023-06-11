@@ -12,6 +12,7 @@ import {
 
 import { useNavigate } from "react-router-dom";
 import { CryptoState } from "../CryproContext";
+
 const useStyles = makeStyles(() => ({
   title: {
     flex: 1,

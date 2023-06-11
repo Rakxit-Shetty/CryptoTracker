@@ -8,11 +8,13 @@ banner:{
    
 },
 bannerContent:{
-  height:500,
+  height:350,
   display:"flex",
   flexDirection:"column",
   paddingTop:25,
+  paddingBottom:25,
   justifyContent:"space-around"
+
 },
 tagline:{
   display:"flex",
@@ -35,7 +37,7 @@ const Banner = () => {
       style={{
         fontFamily: "Montserrat",
         fontWeight: "bold",
-        marginBottom:15
+        marginBottom:20
       }}
       >
         Crypto <span style={{color:"gold"}}>Trac</span>ker

@@ -1,4 +1,4 @@
- import Banner from "../componets/Banner"
+ import Banner from "../componets/Banner/Banner"
 
 const HomePage = () => {
   return (

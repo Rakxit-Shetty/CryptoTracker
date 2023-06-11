@@ -1,8 +1,8 @@
 //package
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //css
 import "./App.css";
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core';
 
 //componets
 import Header from "../src/componets/Header";
@@ -16,7 +16,7 @@ const useStyles = makeStyles(()=> ({
     backgroundColor: '#14161a',
     color: "white",
     minHeight:"100vh"
-    
+
   },
 }));
 

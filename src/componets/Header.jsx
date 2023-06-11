@@ -10,14 +10,14 @@ import {
   ThemeProvider,
 } from "@material-ui/core";
 
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { CryptoState } from "../CryproContext";
 const useStyles = makeStyles(() => ({
   title: {
     flex: 1,
     color: "gold",
     fontFamily: "Montserrat",
+    fontSize:25,
     fontWeight: "bold",
     cursor: "pointr",
   },
@@ -36,15 +36,16 @@ const Header = () => {
 
   const cls = useStyles();
   const navigate = useNavigate();
-  const [cur, setCur] = useState("INR");
-console.log(cur)
+const {cur, setCur}=CryptoState()
+  // const [cur, setCur] = useState("INR");
+
   return (
     <ThemeProvider theme={darkTheme}>
       <AppBar color="transparent" position="static">
         <Container>
           <Toolbar>
             <Typography className={cls.title} onClick={() => navigate("/")}>
-              Crypto Traker{" "}
+              Crypto Tracker{" "}
             </Typography>
             <Select
               variant="outlined"

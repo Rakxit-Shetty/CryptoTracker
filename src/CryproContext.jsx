@@ -1,28 +1,25 @@
-import {createContext, useContext, useEffect, useState} from 'react'
-
-const Crypto =createContext();
+import { createContext, useContext, useEffect, useState } from "react";
+const Crypto = createContext();
 
 // eslint-disable-next-line react/prop-types
-const CryproContext = ({children}) => {
-  const [cur,setcur]=useState("INR");
-  const[symbol, setSymbol]=useState("rup")
-  
+const CryproContext = ({ children }) => {
 
-useEffect(()=>{
+  const [cur, setCur] = useState("INR");
+  const [symbol, setSymbol] = useState("₹");
 
-    cur ==="INR" ? setSymbol("rup"): setSymbol("$")
+  useEffect(() => {
+    cur === "INR" ? setSymbol("₹") : setSymbol("$");
+  }, [cur]);
 
-},[cur])
-
-    return (
-  <Crypto.Provider value={{cur,symbol,setcur}}>
-    {children}
-  </Crypto.Provider>  
-  )
+  return (
+    <Crypto.Provider value={{cur, setCur, symbol }}>
+      {children}
+    </Crypto.Provider>
+  );
 };
 
-export default CryproContext
+export default CryproContext;
 
-export const CryptoState=()=>{
-    return useContext(crypto)
-}
+export const CryptoState = () => {
+  return useContext(Crypto);
+};

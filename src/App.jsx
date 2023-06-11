@@ -16,13 +16,12 @@ const useStyles = makeStyles(()=> ({
     backgroundColor: '#14161a',
     color: "white",
     minHeight:"100vh"
+    
   },
 }));
 
 function App() {
   const cls = useStyles()
-
-
   return (
     <BrowserRouter>
       <div className={cls.App}>

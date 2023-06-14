@@ -40,7 +40,7 @@ const Banner = () => {
         marginBottom:20
       }}
       >
-        Crypto <span style={{color:"gold"}}>Trac</span>ker
+        Crypto <span style={{color:"gold"}}>Track</span>er
       </Typography>
 
       <Typography

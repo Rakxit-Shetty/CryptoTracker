@@ -1,18 +1,14 @@
-/* eslint-disable no-unused-vars */
+
 import { useState, useEffect } from "react";
 import { CoinList } from "../config/api";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { CryptoState } from "../CryproContext";
 import {
-  AppBar,
   makeStyles,
   Container,
   TextField,
-  Toolbar,
-  MenuItem,
   Typography,
-  Select,
   createTheme,
   ThemeProvider,
   TableContainer,
@@ -128,7 +124,7 @@ const CoinsTable = () => {
                 </TableHead>
 
                 <TableBody>
-                  {handleSearch().slice((page-1)*10,(page-1)*10+10).map((row, idx) => {
+                  {handleSearch().slice((page-1)*10,(page-1)*10+10).map((row) => {
                     const profit = row.price_change_percentage_24h > 0;
                     return (
                       <TableRow

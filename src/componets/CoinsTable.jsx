@@ -22,8 +22,9 @@ import {
   LinearProgress,
   TableRow,
   TableCell,
-  //   Pagination,
+  
 } from "@material-ui/core";
+import {Pagination} from '@material-ui/lab';
 
 const darkTheme = createTheme({
   palette: {
@@ -40,7 +41,13 @@ const useStyle = makeStyles(() => ({
     cursor:"pointer",
    "&:hover":{
     backgroundColor:"#131111"
+   },
+   pagination:{
+    "& .MuiPaginationItem-root":{
+      color:"gold",
+    },
    }
+
   }
 }));
 
@@ -49,6 +56,7 @@ const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
+  const[page,setPage]=useState(1)
   const navigate = useNavigate();
   const { cur, symbol } = CryptoState();
 
@@ -108,7 +116,7 @@ const CoinsTable = () => {
                             fontWeight: "700",
                             fontFamily: "Montserrat",
                           }}
-                          align={head !="Coin"? "right":""}
+                          align={head !="Coin"? "right":"left"}
                           key={head}
                           //  align={head === "Coin" ? "" : "right"}
                         >
@@ -120,7 +128,7 @@ const CoinsTable = () => {
                 </TableHead>
 
                 <TableBody>
-                  {handleSearch().map((row, idx) => {
+                  {handleSearch().slice((page-1)*10,(page-1)*10+10).map((row, idx) => {
                     const profit = row.price_change_percentage_24h > 0;
                     return (
                       <TableRow
@@ -189,6 +197,20 @@ const CoinsTable = () => {
             </TableContainer>
           )}
         </TableContainer>
+        <Pagination
+        style={{
+          padding:20,
+          width:"100%",
+          display:"flex",
+          justifyContent:"center"
+        }}
+        classes={{ul:cls.pagination}}
+        count={Number(Number(handleSearch()?.length/10).toFixed())}
+        onChange={(_,val)=>{
+          setPage(val);
+          window.scroll(0,500);
+        }}
+        ></Pagination>
       </Container>
     </ThemeProvider>
   );

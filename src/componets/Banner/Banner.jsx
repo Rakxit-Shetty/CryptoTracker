@@ -8,10 +8,10 @@ banner:{
    
 },
 bannerContent:{
-  height:350,
+  height:550,
   display:"flex",
   flexDirection:"column",
-  paddingTop:25,
+  paddingTop:20,
   paddingBottom:25,
   justifyContent:"space-around"
 

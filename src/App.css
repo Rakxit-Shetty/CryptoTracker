@@ -12,3 +12,16 @@ a{
   text-decoration: none;
   color: gold;
 }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #080301;
+  color: white;
+  font-size: small;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  font-weight: 400;
+}

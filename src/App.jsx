@@ -15,6 +15,7 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "#14161a",
     color: "white",
     minHeight: "100vh",
+    marginBottom:"25px",
   },
 }));
 
